@@ -26,6 +26,7 @@ export const finger = async (request: Request, env: any): Promise<Response> => {
 
   const email = resourceKey.replace(/^(acct:)*@*/, '');
   const value = await env.WEBFINGER.get(email);
+console.log('webfinger', env.WEBFINGER);
 
   if (value === null) {
     return new Response(`Not found: ${email}`, { status: 404 });
@@ -49,7 +50,8 @@ export const finger = async (request: Request, env: any): Promise<Response> => {
       "links":[
         {"rel":"http://webfinger.net/rel/profile-page","type":"text/html","href":"https://${hostname}/@${username}"},
         {"rel":"self","type":"application/activity+json","href":"https://${hostname}/users/${username}"},
-        {"rel":"http://ostatus.org/schema/1.0/subscribe","template":"https://${hostname}/authorize_interaction?uri={uri}"}
+        {"rel":"http://ostatus.org/schema/1.0/subscribe","template":"https://${hostname}/authorize_interaction?uri={uri}"},
+        {"rel":"http://openid.net/specs/connect/1.0/issuer","href":"https://huslage.ui.com/gw/idp/api/v1/public/oauth/239465bd-a76b-40f0-af58-953b8493497a"}
       ]
     }`;
 

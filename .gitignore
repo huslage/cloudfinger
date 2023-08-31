@@ -173,3 +173,5 @@ dist
 # Locals
 
 secrets.txt
+
+.wrangler/

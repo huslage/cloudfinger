@@ -3,7 +3,7 @@ main = "./src/index.ts"
 compatibility_date = "2023-03-14"
 
 kv_namespaces = [
-  { binding = "WEBFINGER", id = "d9cd4fcda05f4aac91260d1bba922bee", preview_id = "d9cd4fcda05f4aac91260d1bba922bee" }
+	{ binding = "WEBFINGER", id = "bad0832c31cd425dbeee526eed30be53", preview_id = "be07834ab33648cabf7e19a51804d103" }
 ]
 
 [vars]
